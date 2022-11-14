@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Yes24_Android" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Yes24_Android" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -12,5 +12,72 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+    <!--font-->
+    <style name="Yes2422Bold">
+        <item name="android:fontFamily">@font/pretendard_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+    <style name="Yes2422Regular">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="Yes2420Bold">
+        <item name="android:fontFamily">@font/pretendard_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Yes2418Bold">
+        <item name="android:fontFamily">@font/pretendard_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Yes2416Bold">
+        <item name="android:fontFamily">@font/pretendard_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Yes2416Semibold">
+        <item name="android:fontFamily">@font/pretendard_semibold</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+
+    <style name="Yes2416Medium">
+        <item name="android:fontFamily">@font/pretendard_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Yes2414Bold">
+        <item name="android:fontFamily">@font/pretendard_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Yes2414Medium">
+        <item name="android:fontFamily">@font/pretendard_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Yes2412Medium">
+        <item name="android:fontFamily">@font/pretendard_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Yes24Date">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">-0.04</item>
     </style>
 </resources>
