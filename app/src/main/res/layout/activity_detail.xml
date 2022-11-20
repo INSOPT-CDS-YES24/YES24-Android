@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="castcount"
             type="Integer" />
@@ -21,12 +22,14 @@
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/appbar_home"
                 android:layout_width="match_parent"
+                app:titleTextColor="@color/black"
                 android:layout_height="@dimen/app_bar_space"
+                app:title="@string/musical"
+                app:navigationIcon="@mipmap/ic_launcher"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:titleTextAppearance="@style/Yes2418Bold"
-                app:titleTextColor="@color/black"
                 tools:text="뮤지컬 [삼총사]" />
 
             <ImageView
@@ -49,7 +52,7 @@
                 android:textColor="@color/brownish_grey"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imv_main"
-                tools:text="뮤지컬 [삼총사]" />
+                tools:text="@string/musical" />
 
 
             <ImageView
@@ -243,19 +246,19 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:text="@{@string/cast_count(castcount)}"
-                tools:text="15"
                 android:textAppearance="@style/Yes2414Bold"
                 android:textColor="@color/yes_24_main"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_cast"
                 app:layout_constraintStart_toEndOf="@+id/tv_cast"
-                app:layout_constraintTop_toTopOf="@+id/tv_cast" />
+                app:layout_constraintTop_toTopOf="@+id/tv_cast"
+                tools:text="15" />
 
             <ImageView
                 android:id="@+id/iv_more"
                 android:layout_width="12dp"
                 android:layout_height="12dp"
-                android:src="@mipmap/ic_launcher"
                 android:layout_marginEnd="21dp"
+                android:src="@mipmap/ic_launcher"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_cast"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/tv_cast" />
@@ -264,11 +267,49 @@
                 android:id="@+id/rcv_cast"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/sub_space_20"
                 android:layout_marginStart="@dimen/sub_space_20"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_marginTop="@dimen/sub_space_20"
                 android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@+id/tv_cast"/>
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/tv_cast" />
+
+            <include
+                android:id="@+id/divider2"
+                layout="@layout/include_grey_divder"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rcv_cast" />
+
+            <TextView
+                android:id="@+id/tv_discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sub_space_20"
+                android:layout_marginTop="24dp"
+                android:text="@string/discount"
+                android:textAppearance="@style/Yes2414Bold"
+                android:textColor="@color/grey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginHorizontal="@dimen/sub_space_20"
+                android:layout_marginTop="@dimen/sub_space_20"
+                android:background="@drawable/shape_rectangle_grey_5"
+                android:gravity="center_vertical"
+                android:paddingStart="12dp"
+                android:textAppearance="@style/Yes2416Semibold"
+                android:textColor="@color/brownish_grey"
+                app:drawableEndCompat="@mipmap/ic_launcher"
+                app:layout_constraintTop_toBottomOf="@+id/tv_discount"
+                app:spannable_text="@{@string/enabled_coupon}"
+                tools:text="@string/enabled_coupon" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
