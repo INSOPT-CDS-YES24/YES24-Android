@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_vip"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/shape_rectangle_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_vip"
+        android:layout_width="48dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="10dp"
+        android:gravity="center_vertical"
+        android:text="@string/vip"
+        android:textAppearance="@style/Yes2414Medium"
+        android:textColor="@color/brownish_grey"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_vip"
+        app:layout_constraintStart_toEndOf="@+id/iv_vip"
+        app:layout_constraintTop_toTopOf="@+id/iv_vip" />
+
+    <TextView
+        android:id="@+id/tv_vip_price"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:layout_marginStart="14dp"
+        android:gravity="center_vertical"
+        android:text="@string/vip_price"
+        android:textAppearance="@style/Yes2414Medium"
+        android:textColor="@color/brownish_grey"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_vip"
+        app:layout_constraintStart_toEndOf="@+id/tv_vip"
+        app:layout_constraintTop_toTopOf="@+id/tv_vip" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
