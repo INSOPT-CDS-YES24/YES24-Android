@@ -29,7 +29,7 @@
                 android:id="@+id/iv_cast"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:imgRes="@{cast.resId}"
+                app:img_res="@{cast.resId}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
