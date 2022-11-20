@@ -7,3 +7,8 @@ import androidx.databinding.BindingAdapter
 fun ImageView.loadPriceRank(foodName: String) {
     this.setImageResource(PriceRank.valueOf(foodName).imageRes)
 }
+
+@BindingAdapter("app:imgRes")
+fun ImageView.loadCastPicture(resid: Int) {
+    this.setImageResource(resid)
+}
