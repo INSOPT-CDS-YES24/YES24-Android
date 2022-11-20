@@ -16,6 +16,206 @@
             android:layout_height="wrap_content"
             tools:context=".detail.DetailActivity">
 
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/appbar_home"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/app_bar_space"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:titleTextAppearance="@style/Yes2418Bold"
+                app:titleTextColor="@color/black"
+                tools:text="뮤지컬 [삼총사]" />
+
+            <ImageView
+                android:id="@+id/imv_main"
+                android:layout_width="match_parent"
+                android:layout_height="538dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/sub_space_40"
+                android:layout_marginStart="@dimen/app_margin_space_16"
+                android:layout_marginTop="@dimen/app_margin_space_18"
+                android:gravity="center_vertical"
+                android:textAppearance="@style/Yes2420Bold"
+                android:textColor="@color/brownish_grey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imv_main"
+                tools:text="뮤지컬 [삼총사]" />
+
+
+            <ImageView
+                android:id="@+id/imv_share"
+                android:layout_width="@dimen/sub_space_40"
+                android:layout_height="@dimen/sub_space_40"
+                android:layout_marginTop="@dimen/app_margin_space_18"
+                android:layout_marginEnd="@dimen/app_margin_space_7"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imv_main" />
+
+            <ImageView
+                android:id="@+id/imv_favor"
+                android:layout_width="@dimen/sub_space_40"
+                android:layout_height="@dimen/sub_space_40"
+                android:layout_marginTop="@dimen/app_margin_space_18"
+                android:layout_marginEnd="13dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintEnd_toStartOf="@+id/imv_share"
+                app:layout_constraintTop_toBottomOf="@+id/imv_main" />
+
+            <ImageView
+                android:id="@+id/imv_calender"
+                android:layout_width="@dimen/sub_space_20"
+                android:layout_height="@dimen/sub_space_20"
+                android:layout_marginTop="@dimen/sub_space_20"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintStart_toStartOf="@+id/tv_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="@dimen/sub_space_20"
+                android:textAppearance="@style/Yes2414Medium"
+                android:textColor="@color/brownish_grey"
+                app:layout_constraintBottom_toBottomOf="@+id/imv_calender"
+                app:layout_constraintStart_toEndOf="@+id/imv_calender"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                tools:text="2022.09.16 - 2022-11.06" />
+
+
+            <ImageView
+                android:id="@+id/imv_location"
+                android:layout_width="@dimen/sub_space_20"
+                android:layout_height="@dimen/sub_space_20"
+                android:layout_marginTop="@dimen/app_margin_space_7"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintStart_toStartOf="@+id/imv_calender"
+                app:layout_constraintTop_toBottomOf="@+id/imv_calender" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:textAppearance="@style/Yes2414Medium"
+                android:textColor="@color/brownish_grey"
+                app:layout_constraintBottom_toBottomOf="@+id/imv_location"
+                app:layout_constraintStart_toEndOf="@+id/imv_location"
+                app:layout_constraintTop_toBottomOf="@+id/imv_calender"
+                tools:text="2022.09.16 - 2022-11.06" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tl_info"
+                android:layout_width="270dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="@dimen/app_margin_space_16"
+                app:layout_constraintStart_toStartOf="@+id/imv_location"
+                app:layout_constraintTop_toBottomOf="@+id/tv_time"
+                app:tabIndicatorColor="@color/yes_24_main"
+                app:tabSelectedTextColor="@color/yes_24_main"
+                app:tabTextAppearance="@style/Yes2414Bold"
+                app:tabTextColor="@color/light_grey">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/show_info"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/additional_info"
+
+                    android:textSize="16sp" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/question"
+                    android:textSize="16sp" />
+            </com.google.android.material.tabs.TabLayout>
+
+
+            <include
+                android:id="@+id/include"
+                layout="@layout/include_grey_divder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tl_info" />
+
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sub_space_20"
+                android:layout_marginTop="25dp"
+                android:text="@string/price_info"
+                android:textAppearance="@style/Yes2414Bold"
+                android:textColor="@color/grey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tl_info" />
+
+            <include
+                android:id="@+id/price_vip"
+                layout="@layout/include_price_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_price"
+                app:price="@{@string/vip_price}"
+                app:rank="@{@string/vip_seat}" />
+
+
+            <include
+                android:id="@+id/price_r"
+                layout="@layout/include_price_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/price_vip"
+                app:price="@{@string/r_price}"
+                app:rank="@{@string/r_seat}" />
+
+            <include
+                android:id="@+id/price_s"
+                layout="@layout/include_price_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/price_r"
+                app:price="@{@string/s_price}"
+                app:rank="@{@string/s_seat}" />
+
+            <include
+                android:id="@+id/price_a"
+                layout="@layout/include_price_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/price_s"
+                app:price="@{@string/a_price}"
+                app:rank="@{@string/a_seat}" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>
