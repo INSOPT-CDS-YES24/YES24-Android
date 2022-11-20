@@ -15,6 +15,5 @@
     <color name="grey">#FF919191</color>
     <color name="price_red">#FFFF567F</color>
     <color name="price_purple">#FF8C56FF</color>
-    <color name="price_blue">#FF508BFF</color>
     <color name="price_yellow">#FFFFCE50</color>
 </resources>

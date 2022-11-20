@@ -14,5 +14,11 @@
     <string name="s_price">90,000원</string>
     <string name="a_seat">A석</string>
     <string name="a_price">70,000원</string>
+    <string name="cast">출연진</string>
+    <string name="discount">할인정보</string>
+    <string name="enabled_coupon">사용가능한 할인쿠폰 2개</string>
+    <string name="expand">펼치기</string>
+    <string name="collapse">접기</string>
+    <string name="cast_count">%d</string>
 
 </resources>
