@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">yes24_Android</string>
+    <string name="show_info">공연정보</string>
+    <string name="additional_info">부가정보</string>
+    <string name="question">Q&amp;A</string>
+    <string name="price_info">가격정보</string>
+    <string name="vip">VIP석</string>
+    <string name="vip_price">150,000원</string>
+    <string name="r_seat">R석</string>
+    <string name="r_seat_price">120,000원</string>
+    <string name="s_seat">S석</string>
+    <string name="s_seat_price">90,000원</string>
+    <string name="a_seat">A석</string>
+    <string name="a_seat_price">70,000원</string>
+
 </resources>
