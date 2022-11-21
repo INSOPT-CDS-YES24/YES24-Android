@@ -22,21 +22,24 @@
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/appbar_home"
                 android:layout_width="match_parent"
-                app:titleTextColor="@color/black"
                 android:layout_height="@dimen/app_bar_space"
-                app:title="@string/musical"
-                app:navigationIcon="@mipmap/ic_launcher"
+                android:elevation="1dp"
+                android:paddingStart="7dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:navigationIcon="@mipmap/ic_launcher"
+                app:title="@string/musical"
                 app:titleTextAppearance="@style/Yes2418Bold"
+                app:titleTextColor="@color/white"
                 tools:text="뮤지컬 [삼총사]" />
 
             <ImageView
                 android:id="@+id/imv_main"
                 android:layout_width="match_parent"
                 android:layout_height="538dp"
-                android:src="@mipmap/ic_launcher"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -129,7 +132,7 @@
                 app:tabIndicatorColor="@color/yes_24_main"
                 app:tabSelectedTextColor="@color/yes_24_main"
                 app:tabTextAppearance="@style/Yes2414Bold"
-                app:tabTextColor="@color/light_grey">
+                app:tabTextColor="@color/bright_grey">
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
@@ -151,6 +154,7 @@
             </com.google.android.material.tabs.TabLayout>
 
             <include
+                android:id="@+id/include"
                 layout="@layout/include_grey_divder"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
@@ -296,6 +300,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
             <TextView
+                android:id="@+id/tv_coupon"
                 android:layout_width="match_parent"
                 android:layout_height="46dp"
                 android:layout_marginHorizontal="@dimen/sub_space_20"
@@ -310,6 +315,189 @@
                 app:spannable_text="@{@string/enabled_coupon}"
                 tools:text="@string/enabled_coupon" />
 
+            <ImageView
+                android:id="@+id/iv_detail1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/img_detail1"
+                app:layout_constraintTop_toBottomOf="@+id/tv_coupon" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_expand1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="@color/white"
+                android:elevation="0dp"
+                android:shadowColor="@color/white"
+                android:stateListAnimator="@null"
+                android:text="@string/expand"
+                android:textAppearance="@style/Yes2416Bold"
+                android:textColor="@color/brownish_grey"
+                app:icon="@drawable/ic_launcher_background"
+                app:iconGravity="textStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_detail1" />
+
+            <include
+                android:id="@+id/divider3"
+                layout="@layout/include_grey_divder"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_expand1" />
+
+            <TextView
+                android:id="@+id/tv_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sub_space_20"
+                android:layout_marginTop="24dp"
+                android:text="@string/detail"
+                android:textAppearance="@style/Yes2414Bold"
+                android:textColor="@color/grey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+            <ImageView
+                android:id="@+id/iv_detail2"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="26dp"
+                android:src="@drawable/img_detail2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_detail" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_expand2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="@color/white"
+                android:stateListAnimator="@null"
+                android:text="@string/expand"
+                android:textAppearance="@style/Yes2416Bold"
+                android:textColor="@color/brownish_grey"
+                app:icon="@drawable/ic_launcher_background"
+                app:iconGravity="textStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_detail2" />
+
+            <include
+                android:id="@+id/divider4"
+                layout="@layout/include_grey_divder"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_expand2" />
+
+
+            <TextView
+                android:id="@+id/tv_realted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sub_space_20"
+                android:layout_marginTop="24dp"
+                android:text="@string/related_info"
+                android:textAppearance="@style/Yes2414Bold"
+                android:textColor="@color/grey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_expand2" />
+
+            <TextView
+                android:id="@+id/tv_host"
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/host"
+                android:textAppearance="@style/Yes2414Bold"
+                android:textColor="@color/bright_grey"
+                app:layout_constraintStart_toStartOf="@+id/tv_realted"
+                app:layout_constraintTop_toBottomOf="@+id/tv_realted" />
+
+            <TextView
+                android:id="@+id/tv_host_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:text="@string/host_content"
+                android:textAppearance="@style/Yes2414Bold"
+                android:textColor="@color/grey"
+                app:layout_constraintBottom_toBottomOf="@id/tv_host"
+                app:layout_constraintStart_toEndOf="@+id/tv_host"
+                app:layout_constraintTop_toTopOf="@id/tv_host" />
+
+            <TextView
+                android:id="@+id/tv_counsel"
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/counsel"
+                android:textAppearance="@style/Yes2414Bold"
+                android:textColor="@color/bright_grey"
+                app:layout_constraintStart_toStartOf="@+id/tv_host"
+                app:layout_constraintTop_toBottomOf="@+id/tv_host" />
+
+            <TextView
+                android:id="@+id/tv_counsel_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:text="@string/counsel_content"
+                android:textAppearance="@style/Yes2414Bold"
+                android:textColor="@color/grey"
+                app:layout_constraintBottom_toBottomOf="@id/tv_counsel"
+                app:layout_constraintStart_toEndOf="@+id/tv_counsel"
+                app:layout_constraintTop_toTopOf="@id/tv_counsel" />
+
+            <TextView
+                android:id="@+id/tv_preview_rank"
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/preview_rank"
+                android:textAppearance="@style/Yes2414Bold"
+                android:textColor="@color/bright_grey"
+                app:layout_constraintStart_toStartOf="@+id/tv_counsel"
+                app:layout_constraintTop_toBottomOf="@+id/tv_counsel" />
+
+            <TextView
+                android:id="@+id/tv_preview_rank_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:text="@string/preview_rank_content"
+                android:textAppearance="@style/Yes2414Bold"
+                android:textColor="@color/grey"
+                app:layout_constraintBottom_toBottomOf="@id/tv_preview_rank"
+                app:layout_constraintStart_toEndOf="@+id/tv_preview_rank"
+                app:layout_constraintTop_toTopOf="@id/tv_preview_rank" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/location"
+                android:textAppearance="@style/Yes2414Bold"
+                android:textColor="@color/bright_grey"
+                app:layout_constraintStart_toStartOf="@+id/tv_preview_rank"
+                app:layout_constraintTop_toBottomOf="@+id/tv_preview_rank" />
+
+            <TextView
+                android:id="@+id/tv_location_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="27dp"
+                android:text="@string/location_content"
+                android:textAppearance="@style/Yes2414Bold"
+                android:textColor="@color/grey"
+                app:layout_constraintBottom_toBottomOf="@id/tv_location"
+                app:layout_constraintStart_toEndOf="@+id/tv_location"
+                app:layout_constraintTop_toTopOf="@id/tv_location" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
