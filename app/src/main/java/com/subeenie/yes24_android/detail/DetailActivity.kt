@@ -3,7 +3,6 @@ package com.subeenie.yes24_android.detail
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -37,7 +36,7 @@ class DetailActivity : AppCompatActivity() {
         binding.viewmodel = detailViewModel
         binding.lifecycleOwner = this
         setAdapter()
-        setListeners()
+        addObserve()
     }
 
     private fun setAdapter() {
@@ -47,26 +46,36 @@ class DetailActivity : AppCompatActivity() {
         detailViewModel.count = adapter.currentList.size
     }
 
-    private fun setListeners() {
-        binding.btnPoster.setOnClickListener {
-            cropBitmap(R.drawable.img_detail1, binding.ivPoster)
+    private fun addObserve() {
+        detailViewModel.posterExpand.observe(this) {
+            cropBitmap(R.drawable.img_detail, binding.ivPoster, it)
         }
-        binding.btnDetail.setOnClickListener {
-            cropBitmap(R.drawable.img_detail2, binding.ivDetail)
+        detailViewModel.detailExpand.observe(this) {
+            cropBitmap(R.drawable.img_poster, binding.ivDetail, it)
         }
     }
 
-    private fun cropBitmap(image: Int, imageView: ImageView) {
+    private fun cropBitmap(image: Int, imageView: ImageView, boolean: Boolean?) {
         val bitmap = BitmapFactory.decodeResource(this.resources, image)
-        val crop = Bitmap.createBitmap( // 강제로 이미지의 높이를 1/4 토막
-            bitmap,
-            0,
-            0,
-            bitmap.width,
-            bitmap.height / 4
-        )
-        binding.ivDetail.setImageBitmap(crop)
-
+        if (boolean == false) {
+            val crop = Bitmap.createBitmap( // 강제로 이미지의 높이를 1/4 토막
+                bitmap,
+                0,
+                0,
+                bitmap.width,
+                bitmap.height / 4
+            )
+            imageView.setImageBitmap(crop)
+        } else {
+            val crop = Bitmap.createBitmap( // 원상태로 복구
+                bitmap,
+                0,
+                0,
+                bitmap.width,
+                bitmap.height
+            )
+            imageView.setImageBitmap(crop)
+        }
     }
 
 

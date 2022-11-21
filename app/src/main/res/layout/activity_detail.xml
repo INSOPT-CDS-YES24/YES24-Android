@@ -327,7 +327,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/img_detail1"
+                        android:src="@drawable/img_poster"
                         app:layout_constraintTop_toBottomOf="@+id/tv_coupon" />
 
                     <com.google.android.material.button.MaterialButton
@@ -336,12 +336,13 @@
                         android:layout_height="60dp"
                         android:backgroundTint="@color/white"
                         android:checked="false"
+                        android:onClick="@{()->viewmodel.onExpandClick(1)}"
                         android:shadowColor="@color/white"
                         android:stateListAnimator="@null"
                         android:text="@string/expand"
                         android:textAppearance="@style/Yes2416Bold"
                         android:textColor="@color/brownish_grey"
-                        app:expand_button="@{viewmodel.detailExpand}"
+                        app:expand_button="@{viewmodel.posterExpand}"
                         app:icon="@drawable/ic_expand"
                         app:iconGravity="textStart"
                         app:iconPadding="-3dp"
@@ -377,7 +378,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="26dp"
-                        android:src="@drawable/img_detail2"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_detail"
                         app:layout_constraintTop_toBottomOf="@+id/tv_detail" />
 
                     <com.google.android.material.button.MaterialButton
@@ -385,10 +387,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:backgroundTint="@color/white"
+                        android:onClick="@{()->viewmodel.onExpandClick(2)}"
                         android:stateListAnimator="@null"
                         android:text="@string/expand"
                         android:textAppearance="@style/Yes2416Bold"
                         android:textColor="@color/brownish_grey"
+                        app:expand_button="@{viewmodel.detailExpand}"
                         app:icon="@drawable/ic_expand"
                         app:iconGravity="textStart"
                         app:iconPadding="-3dp"
