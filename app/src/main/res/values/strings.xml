@@ -31,5 +31,6 @@
     <string name="preview_rank_content">8세 이상 관람가 (미취학 아동 입장 불가)</string>
     <string name="location">공연장소</string>
     <string name="location_content">부산 소항씨어터 신한카드홀</string>
+    <string name="book">예매하기</string>
 
 </resources>
