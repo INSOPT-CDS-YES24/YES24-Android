@@ -6,8 +6,8 @@
     <data>
 
         <variable
-            name="castcount"
-            type="Integer" />
+            name="viewmodel"
+            type="com.subeenie.yes24_android.detail.viewmodel.DetailViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -255,7 +255,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:text="@{@string/cast_count(castcount)}"
+                        android:text="@{@string/cast_count(viewmodel.count)}"
                         android:textAppearance="@style/Yes2414Bold"
                         android:textColor="@color/yes_24_main"
                         app:layout_constraintBottom_toBottomOf="@+id/tv_cast"
@@ -322,38 +322,43 @@
                         tools:text="@string/enabled_coupon" />
 
                     <ImageView
-                        android:id="@+id/iv_detail1"
+                        android:id="@+id/iv_poster"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
                         android:scaleType="fitXY"
                         android:src="@drawable/img_detail1"
                         app:layout_constraintTop_toBottomOf="@+id/tv_coupon" />
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btn_expand1"
+                        android:id="@+id/btn_poster"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:backgroundTint="@color/white"
+                        android:checked="false"
                         android:shadowColor="@color/white"
                         android:stateListAnimator="@null"
                         android:text="@string/expand"
                         android:textAppearance="@style/Yes2416Bold"
                         android:textColor="@color/brownish_grey"
-                        app:icon="@mipmap/ic_launcher"
+                        app:expand_button="@{viewmodel.detailExpand}"
+                        app:icon="@drawable/ic_expand"
                         app:iconGravity="textStart"
+                        app:iconPadding="-3dp"
+                        app:iconTint="@null"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/iv_detail1" />
+                        app:layout_constraintTop_toBottomOf="@+id/iv_poster" />
 
                     <include
                         android:id="@+id/divider3"
                         layout="@layout/include_grey_divider"
                         android:layout_width="match_parent"
                         android:layout_height="2dp"
+                        android:scaleType="fitXY"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/btn_expand1" />
+                        app:layout_constraintTop_toBottomOf="@+id/btn_poster" />
 
                     <TextView
                         android:id="@+id/tv_detail"
@@ -368,15 +373,15 @@
                         app:layout_constraintTop_toBottomOf="@+id/divider3" />
 
                     <ImageView
-                        android:id="@+id/iv_detail2"
+                        android:id="@+id/iv_detail"
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="26dp"
                         android:src="@drawable/img_detail2"
                         app:layout_constraintTop_toBottomOf="@+id/tv_detail" />
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btn_expand2"
+                        android:id="@+id/btn_detail"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:backgroundTint="@color/white"
@@ -384,12 +389,13 @@
                         android:text="@string/expand"
                         android:textAppearance="@style/Yes2416Bold"
                         android:textColor="@color/brownish_grey"
-                        app:icon="@drawable/ic_launcher_background"
+                        app:icon="@drawable/ic_expand"
                         app:iconGravity="textStart"
+                        app:iconPadding="-3dp"
+                        app:iconTint="@null"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/iv_detail2" />
+                        app:layout_constraintTop_toBottomOf="@+id/iv_detail" />
 
                     <include
                         android:id="@+id/divider4"
@@ -398,11 +404,11 @@
                         android:layout_height="2dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/btn_expand2" />
+                        app:layout_constraintTop_toBottomOf="@+id/btn_detail" />
 
 
                     <TextView
-                        android:id="@+id/tv_realted"
+                        android:id="@+id/tv_related"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/sub_space_20"
@@ -411,7 +417,7 @@
                         android:textAppearance="@style/Yes2414Bold"
                         android:textColor="@color/grey"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/btn_expand2" />
+                        app:layout_constraintTop_toBottomOf="@+id/btn_detail" />
 
                     <TextView
                         android:id="@+id/tv_host"
@@ -421,8 +427,8 @@
                         android:text="@string/host"
                         android:textAppearance="@style/Yes2414Bold"
                         android:textColor="@color/bright_grey"
-                        app:layout_constraintStart_toStartOf="@+id/tv_realted"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_realted" />
+                        app:layout_constraintStart_toStartOf="@+id/tv_related"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_related" />
 
                     <TextView
                         android:id="@+id/tv_host_content"
