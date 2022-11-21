@@ -15,8 +15,8 @@ fun ImageView.loadPriceRank(foodName: String) {
 }
 
 @BindingAdapter("app:img_res")
-fun ImageView.loadCastPicture(resid: Int) {
-    this.setImageResource(resid)
+fun ImageView.loadCastPicture(resId: Int) {
+    this.setImageResource(resId)
 }
 
 /**
