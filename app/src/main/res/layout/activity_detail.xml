@@ -34,7 +34,7 @@
                 <ImageView
                     android:id="@+id/iv_main"
                     android:layout_width="match_parent"
-                    android:layout_height="538dp"
+                    android:layout_height="wrap_content"
                     android:scaleType="fitXY"
                     android:src="@drawable/img_title"
                     app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +44,6 @@
                     android:id="@+id/appbar_pin"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/app_bar_space"
-                    android:elevation="0.1dp"
                     android:paddingStart="7dp"
                     app:layout_collapseMode="pin"
                     app:layout_constraintTop_toTopOf="parent"
@@ -70,7 +69,7 @@
                     android:id="@+id/cl_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="-10dp"
+                    android:background="@drawable/shape_rectangle_white_5"
                     android:paddingBottom="85dp"
                     app:layout_constraintTop_toTopOf="parent">
 
@@ -97,13 +96,16 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
+                    <ToggleButton
                         android:id="@+id/iv_favor"
                         android:layout_width="@dimen/sub_space_40"
                         android:layout_height="@dimen/sub_space_40"
-                        android:layout_marginTop="26dp"
+                        android:layout_marginTop="@dimen/app_margin_space_26"
                         android:layout_marginEnd="13dp"
-                        android:src="@drawable/ic_favor_off"
+                        android:background="@drawable/selector_favor_toggle"
+                        android:text=""
+                        android:textOff=""
+                        android:textOn=""
                         app:layout_constraintEnd_toStartOf="@+id/iv_share"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -258,13 +260,10 @@
 
                     <TextView
                         android:id="@+id/tv_cast"
+                        style="@style/Detail_SubTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/sub_space_20"
-                        android:layout_marginTop="24dp"
                         android:text="@string/cast"
-                        android:textAppearance="@style/Yes2414Bold"
-                        android:textColor="@color/grey"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/divider" />
 
@@ -313,13 +312,10 @@
 
                     <TextView
                         android:id="@+id/tv_discount"
+                        style="@style/Detail_SubTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/sub_space_20"
-                        android:layout_marginTop="24dp"
                         android:text="@string/discount"
-                        android:textAppearance="@style/Yes2414Bold"
-                        android:textColor="@color/grey"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
@@ -350,16 +346,12 @@
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_poster"
+                        style="@style/Detail_Collapse_Button"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
-                        android:backgroundTint="@color/white"
                         android:checked="false"
                         android:onClick="@{()->viewmodel.onExpandClick(1)}"
-                        android:shadowColor="@color/white"
-                        android:stateListAnimator="@null"
                         android:text="@string/expand"
-                        android:textAppearance="@style/Yes2416Bold"
-                        android:textColor="@color/brownish_grey"
                         app:expand_button="@{viewmodel.posterExpand}"
                         app:icon="@drawable/ic_expand"
                         app:iconGravity="textStart"
@@ -381,13 +373,10 @@
 
                     <TextView
                         android:id="@+id/tv_detail"
+                        style="@style/Detail_SubTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/sub_space_20"
-                        android:layout_marginTop="24dp"
                         android:text="@string/detail"
-                        android:textAppearance="@style/Yes2414Bold"
-                        android:textColor="@color/grey"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/divider3" />
 
@@ -402,14 +391,11 @@
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_detail"
+                        style="@style/Detail_Collapse_Button"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
-                        android:backgroundTint="@color/white"
                         android:onClick="@{()->viewmodel.onExpandClick(2)}"
-                        android:stateListAnimator="@null"
                         android:text="@string/expand"
-                        android:textAppearance="@style/Yes2416Bold"
-                        android:textColor="@color/brownish_grey"
                         app:expand_button="@{viewmodel.detailExpand}"
                         app:icon="@drawable/ic_expand"
                         app:iconGravity="textStart"
@@ -428,107 +414,87 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/btn_detail" />
 
-
                     <TextView
                         android:id="@+id/tv_related"
+                        style="@style/Detail_SubTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/sub_space_20"
-                        android:layout_marginTop="24dp"
                         android:text="@string/related_info"
-                        android:textAppearance="@style/Yes2414Bold"
-                        android:textColor="@color/grey"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/btn_detail" />
 
                     <TextView
                         android:id="@+id/tv_host"
+                        style="@style/Detail_Related_Title"
                         android:layout_width="72dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="24dp"
                         android:text="@string/host"
-                        android:textAppearance="@style/Yes2414Bold"
-                        android:textColor="@color/bright_grey"
                         app:layout_constraintStart_toStartOf="@+id/tv_related"
                         app:layout_constraintTop_toBottomOf="@+id/tv_related" />
 
                     <TextView
                         android:id="@+id/tv_host_content"
+                        style="@style/Detail_Related_Content"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="27dp"
                         android:text="@string/host_content"
-                        android:textAppearance="@style/Yes2414Bold"
-                        android:textColor="@color/grey"
                         app:layout_constraintBottom_toBottomOf="@id/tv_host"
                         app:layout_constraintStart_toEndOf="@+id/tv_host"
                         app:layout_constraintTop_toTopOf="@id/tv_host" />
 
                     <TextView
                         android:id="@+id/tv_counsel"
+                        style="@style/Detail_Related_Title"
                         android:layout_width="72dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="24dp"
                         android:text="@string/counsel"
-                        android:textAppearance="@style/Yes2414Bold"
-                        android:textColor="@color/bright_grey"
                         app:layout_constraintStart_toStartOf="@+id/tv_host"
                         app:layout_constraintTop_toBottomOf="@+id/tv_host" />
 
                     <TextView
                         android:id="@+id/tv_counsel_content"
+                        style="@style/Detail_Related_Content"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="27dp"
                         android:text="@string/counsel_content"
-                        android:textAppearance="@style/Yes2414Bold"
-                        android:textColor="@color/grey"
                         app:layout_constraintBottom_toBottomOf="@id/tv_counsel"
                         app:layout_constraintStart_toEndOf="@+id/tv_counsel"
                         app:layout_constraintTop_toTopOf="@id/tv_counsel" />
 
                     <TextView
                         android:id="@+id/tv_preview_rank"
+                        style="@style/Detail_Related_Title"
                         android:layout_width="72dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="24dp"
                         android:text="@string/preview_rank"
-                        android:textAppearance="@style/Yes2414Bold"
-                        android:textColor="@color/bright_grey"
                         app:layout_constraintStart_toStartOf="@+id/tv_counsel"
                         app:layout_constraintTop_toBottomOf="@+id/tv_counsel" />
 
                     <TextView
                         android:id="@+id/tv_preview_rank_content"
+                        style="@style/Detail_Related_Content"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="27dp"
                         android:text="@string/preview_rank_content"
-                        android:textAppearance="@style/Yes2414Bold"
-                        android:textColor="@color/grey"
                         app:layout_constraintBottom_toBottomOf="@id/tv_preview_rank"
                         app:layout_constraintStart_toEndOf="@+id/tv_preview_rank"
                         app:layout_constraintTop_toTopOf="@id/tv_preview_rank" />
 
                     <TextView
                         android:id="@+id/tv_location"
+                        style="@style/Detail_Related_Title"
                         android:layout_width="72dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="24dp"
                         android:text="@string/location"
-                        android:textAppearance="@style/Yes2414Bold"
-                        android:textColor="@color/bright_grey"
                         app:layout_constraintStart_toStartOf="@+id/tv_preview_rank"
                         app:layout_constraintTop_toBottomOf="@+id/tv_preview_rank" />
 
                     <TextView
                         android:id="@+id/tv_location_content"
+                        style="@style/Detail_Related_Content"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="27dp"
                         android:text="@string/location_content"
-                        android:textAppearance="@style/Yes2414Bold"
-                        android:textColor="@color/grey"
                         app:layout_constraintBottom_toBottomOf="@id/tv_location"
                         app:layout_constraintStart_toEndOf="@+id/tv_location"
                         app:layout_constraintTop_toTopOf="@id/tv_location" />
