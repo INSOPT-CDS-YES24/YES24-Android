@@ -17,4 +17,5 @@
     <color name="price_red">#FFFF567F</color>
     <color name="price_purple">#FF8C56FF</color>
     <color name="price_yellow">#FFFFCE50</color>
+    <color name="transparent">#00000000</color>
 </resources>

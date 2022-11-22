@@ -29,7 +29,7 @@ fun ImageView.loadCastPicture(resId: Int) {
 fun TextView.setSpannable(text: String) {
     val str = SpannableString(text)
     str.setSpan(
-        ForegroundColorSpan(Color.parseColor("#508BFF")),
+        ForegroundColorSpan(context.getColor(R.color.yes_24_main)),
         text.length - 2,
         text.length - 1,
         Spanned.SPAN_EXCLUSIVE_INCLUSIVE
@@ -44,10 +44,10 @@ fun TextView.setSpannable(text: String) {
 @BindingAdapter("app:expand_button")
 fun MaterialButton.expandButton(expand: Boolean) {
     if (expand) {
-        this.text = context.getString(R.string.expand)
+        this.text = context.getString(R.string.collapse)
         this.icon = context.getDrawable(R.drawable.ic_collapse)
     } else {
-        this.text = context.getString(R.string.collapse)
+        this.text = context.getString(R.string.expand)
         this.icon = context.getDrawable(R.drawable.ic_expand)
     }
 }

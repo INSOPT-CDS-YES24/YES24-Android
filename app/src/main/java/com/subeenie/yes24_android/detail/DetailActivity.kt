@@ -1,11 +1,15 @@
 package com.subeenie.yes24_android.detail
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener
 import com.subeenie.yes24_android.R
 import com.subeenie.yes24_android.databinding.ActivityDetailBinding
 import com.subeenie.yes24_android.detail.adapter.CastAdapter
@@ -37,6 +41,13 @@ class DetailActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
         setAdapter()
         addObserve()
+        changeToolbar(this)
+    }
+
+    private fun setListener() {
+        binding.appbarPin.setNavigationOnClickListener {
+            //finish()
+        }
     }
 
     private fun setAdapter() {
@@ -44,6 +55,33 @@ class DetailActivity : AppCompatActivity() {
         binding.rcvCast.adapter = adapter
         adapter.submitList(castList)
         detailViewModel.count = adapter.currentList.size
+    }
+
+    /**
+     * CollapsingToolbarLayout 위치에 따라서 앱바 속성 변경
+     */
+    private fun changeToolbar(context: Context) {
+        binding.layoutAppbar.addOnOffsetChangedListener(object : OnOffsetChangedListener {
+            var scrollRange = -1
+
+            @SuppressLint("UseCompatLoadingForDrawables", "ResourceAsColor")
+            override fun onOffsetChanged(appBarLayout: AppBarLayout, verticalOffset: Int) {
+                if (scrollRange == -1) {
+                    scrollRange = appBarLayout.totalScrollRange
+                }
+                with(binding.appbarPin) {
+                    if (scrollRange + verticalOffset == 0) { // Collapse 될떄
+                        setBackgroundColor(context.getColor(R.color.white))
+                        setTitleTextColor(context.getColor(R.color.black))
+                        navigationIcon = context.getDrawable(R.drawable.ic_arrow_big_left)
+                    } else { // Expand 될때
+                        setBackgroundColor(context.getColor(R.color.transparent))
+                        setTitleTextColor(context.getColor(R.color.white))
+                        navigationIcon = context.getDrawable(R.drawable.ic_arrow_left_white)
+                    }
+                }
+            }
+        })
     }
 
     private fun addObserve() {
@@ -55,25 +93,18 @@ class DetailActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     *  접기/펼치기를 위한 함수
+     */
     private fun cropBitmap(image: Int, imageView: ImageView, boolean: Boolean?) {
         val bitmap = BitmapFactory.decodeResource(this.resources, image)
         if (boolean == false) {
-            val crop = Bitmap.createBitmap( // 강제로 이미지의 높이를 1/4 토막
-                bitmap,
-                0,
-                0,
-                bitmap.width,
-                bitmap.height / 4
-            )
+            // 강제로 이미지의 높이를 1/4 토막
+            val crop = Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height / 4)
             imageView.setImageBitmap(crop)
         } else {
-            val crop = Bitmap.createBitmap( // 원상태로 복구
-                bitmap,
-                0,
-                0,
-                bitmap.width,
-                bitmap.height
-            )
+            // 원상태로 복구
+            val crop = Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height)
             imageView.setImageBitmap(crop)
         }
     }
