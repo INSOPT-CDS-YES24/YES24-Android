@@ -5,13 +5,11 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class ContentDto(
+data class ContentDetailDto(
     @SerialName("status")
     val status: Int, // 200
-    @SerialName("success")
-    val success: Boolean, // true
     @SerialName("message")
-    val message: String, // 콘텐츠 상세정보 조회 성공.
+    val message: String, // 상세정보 조회 성공
     @SerialName("data")
     val `data`: Data
 ) {

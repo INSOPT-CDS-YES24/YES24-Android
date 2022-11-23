@@ -5,7 +5,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class DetailDto(
+data class FavorDto(
     @SerialName("status")
     val status: Int, // 200
     @SerialName("message")
