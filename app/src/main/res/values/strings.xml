@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">yes24_Android</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="myticket">마이티켓</string>
+    <string name="myticket_name">김현지</string>
 </resources>
