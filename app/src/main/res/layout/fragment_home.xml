@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_home_recommend_yes24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/pretendard_semibold"
+                android:text="YES24 TICKET"
+                android:textColor="#C8C8C8"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_home_recommend_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/pretendard_semibold"
+                android:text="김현지님,"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_recommend_yes24" />
+
+            <TextView
+                android:id="@+id/tv_home_recommend_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:text="이런 공연은 어떠세요?"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_recommend_user" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_home_recommend_vp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_home_recommend_question">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/vp_home_recommend"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_home_category_concert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_home_child"
+                android:drawableTop="@drawable/ic_home_concert"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:minHeight="0dp"
+                android:text="콘서트"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_home_recommend_vp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_home_category_musical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_home_child"
+                android:drawableTop="@drawable/ic_home_musical"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:minHeight="0dp"
+                android:text="콘서트"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/btn_home_category_concert"
+                app:layout_constraintTop_toBottomOf="@+id/cl_home_recommend_vp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_home_category_theater"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_home_child"
+                android:drawableTop="@drawable/ic_home_play"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:minHeight="0dp"
+                android:text="연극"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_home_category_musical"
+                app:layout_constraintTop_toBottomOf="@+id/cl_home_recommend_vp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_home_category_classic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_home_child"
+                android:drawableTop="@drawable/ic_home_classic"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:minHeight="0dp"
+                android:text="클래식/무용"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_home_category_concert" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_home_category_exhibition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_home_child"
+                android:drawableTop="@drawable/ic_home_display"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:minHeight="0dp"
+                android:text="전시/행사"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/btn_home_category_classic"
+                app:layout_constraintTop_toBottomOf="@+id/btn_home_category_musical" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_home_category_family"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_home_child"
+                android:drawableTop="@drawable/ic_home_child"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:minHeight="0dp"
+                android:text="아동/가족"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_home_category_exhibition"
+                app:layout_constraintTop_toBottomOf="@+id/btn_home_category_theater" />
+
+            <TextView
+                android:id="@+id/tv_home_prefer_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="29dp"
+                android:fontFamily="@font/pretendard_bold"
+                android:text="YES PICK"
+                android:textColor="#C8C8C8"
+                android:textSize="15sp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_home_category_family" />
+
+            <TextView
+                android:id="@+id/tv_home_prefer_title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="13dp"
+                android:fontFamily="@font/pretendard_bold"
+                android:text="평소 선호하시는"
+                android:textColor="#606060"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_home_prefer_yes" />
+
+            <TextView
+                android:id="@+id/tv_home_prefer_title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/pretendard_bold"
+                android:text="뮤지컬 "
+                android:textColor="#508BFF"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_home_prefer_title1" />
+
+            <TextView
+                android:id="@+id/tv_home_prefer_title3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pretendard_bold"
+                android:text="장르의 인기 공연이에요."
+                android:textColor="#606060"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/tv_home_prefer_title2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_home_prefer_title1" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_home_prefer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_home_prefer_title3"
+                tools:listitem="@layout/item_home_prefer_rv" />
+
+            <TextView
+                android:id="@+id/tv_home_similar_title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="13dp"
+                android:fontFamily="@font/pretendard_bold"
+                android:text="최근 관람했던"
+                android:textColor="#606060"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_home_prefer" />
+
+            <TextView
+                android:id="@+id/tv_home_similar_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/pretendard_bold"
+                android:text="에곤실레"
+                android:textColor="#508BFF"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_home_similar_title1" />
+
+            <TextView
+                android:id="@+id/tv_home_similar_title3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pretendard_bold"
+                android:text="와 비슷한 공연이에요."
+                android:textColor="#606060"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/tv_home_similar_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_home_similar_title1" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_home_simillar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_home_similar_title3"
+                tools:listitem="@layout/item_home_prefer_rv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
