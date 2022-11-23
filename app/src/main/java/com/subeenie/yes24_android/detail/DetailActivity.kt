@@ -11,10 +11,16 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener
 import com.subeenie.yes24_android.R
+import com.subeenie.yes24_android.application.ApiFactory
+import com.subeenie.yes24_android.data.ContentDetailDto
 import com.subeenie.yes24_android.databinding.ActivityDetailBinding
 import com.subeenie.yes24_android.detail.adapter.CastAdapter
 import com.subeenie.yes24_android.detail.data.CastData
 import com.subeenie.yes24_android.detail.viewmodel.DetailViewModel
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import timber.log.Timber
 
 
 class DetailActivity : AppCompatActivity() {
@@ -36,6 +42,26 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        ApiFactory.yes24Service.getContentDetail(1).enqueue(
+            object : Callback<ContentDetailDto>{
+                override fun onResponse(
+                    call: Call<ContentDetailDto>,
+                    response: Response<ContentDetailDto>
+                ) {
+                    if(response.isSuccessful){
+                        Timber.e(response.toString())
+                        Timber.e(response.body().toString())
+                    }
+                    Timber.e(response.toString())
+                }
+                override fun onFailure(call: Call<ContentDetailDto>, t: Throwable) {
+                    Timber.e(t)
+                }
+            }
+
+
+        )
 
         binding.viewmodel = detailViewModel
         binding.lifecycleOwner = this
