@@ -27,9 +27,10 @@ object ApiFactory {
             .build()
     }
 
-    val yes24Service:Yes24Service by lazy {
+    val yes24Service: Yes24Service by lazy {
         yes24Retrofit.create(Yes24Service::class.java)
     }
+    //inline fun <reified T> create(): T = retrofit.create<T>(T::class.java) <- 요거 대신 자체 retrofit 자체 create 써줬습니다!
 
     class AppInterceptor : Interceptor { // Logcat으로 서버통신 확인하라고 Interceptor 남겨둡니다!
         @Throws(IOException::class)
@@ -37,11 +38,10 @@ object ApiFactory {
             val request = request()
             val response = proceed(request)
             Timber.d(request.toString())
-            if(response.code in 200..299)
+            if (response.code in 200..299)
                 Timber.d(response.toString())
-            else if(response.code in 400..599)
+            else if (response.code in 400..599)
                 Timber.e(response.toString())
-
             return response
         }
     }
