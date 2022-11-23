@@ -50,7 +50,7 @@
             android:textColor="@color/brownish_grey"
             app:layout_constraintStart_toStartOf="@id/tv_genre"
             app:layout_constraintTop_toBottomOf="@+id/tv_genre"
-            tools:text="태양의서커스 <뉴 알레그리아>" />
+            tools:text="태양의서커스 뉴 알레그리아" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
