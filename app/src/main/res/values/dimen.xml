@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="app_bar_space">46dp</dimen>
+
+    <dimen name="app_margin_space_7">7dp</dimen>
+    <dimen name="app_margin_space_16">16dp</dimen>
+    <dimen name="app_margin_space_18">18dp</dimen>
+    <dimen name="app_margin_space_24">24dp</dimen>
+    <dimen name="app_margin_space_26">26dp</dimen>
+
+    <dimen name="sub_space_20">20dp</dimen>
+    <dimen name="sub_space_40">40dp</dimen>
+
+</resources>

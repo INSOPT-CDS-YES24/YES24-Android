@@ -11,6 +11,7 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:includeFontPadding">false</item>
         <!-- Customize your theme here. -->
     </style>
     <!--font-->
@@ -79,5 +80,32 @@
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">12sp</item>
         <item name="android:letterSpacing">-0.04</item>
+    </style>
+
+    <!-- detail activity-->
+    <style name="Detail_SubTitle">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textAppearance">@style/Yes2414Bold</item>
+        <item name="android:layout_marginStart">@dimen/sub_space_20</item>
+        <item name="android:layout_marginTop">@dimen/app_margin_space_24</item>
+    </style>
+
+    <style name="Detail_Collapse_Button">
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAppearance">@style/Yes2416Bold</item>
+        <item name="android:textColor">@color/brownish_grey</item>
+    </style>
+
+    <style name="Detail_Related_Title">
+        <item name="android:textColor">@color/bright_grey</item>
+        <item name="android:textAppearance">@style/Yes2414Bold</item>
+        <item name="android:layout_marginTop">@dimen/app_margin_space_24</item>
+    </style>
+
+    <style name="Detail_Related_Content">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textAppearance">@style/Yes2414Bold</item>
+        <item name="android:layout_marginStart">27dp</item>
     </style>
 </resources>

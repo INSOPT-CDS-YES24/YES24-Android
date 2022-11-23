@@ -1,3 +1,38 @@
 <resources>
     <string name="app_name">yes24_Android</string>
+
+    <!-- detail acitvity -->
+    <string name="show_info">공연정보</string>
+    <string name="musical">뮤지컬 [삼총사]</string>
+    <string name="additional_info">부가정보</string>
+    <string name="question">Q&amp;A</string>
+    <string name="price_info">가격정보</string>
+    <string name="vip_seat">VIP석</string>
+    <string name="vip_price">150,000원</string>
+    <string name="r_seat">R석</string>
+    <string name="r_price">120,000원</string>
+    <string name="s_seat">S석</string>
+    <string name="s_price">90,000원</string>
+    <string name="a_seat">A석</string>
+    <string name="a_price">70,000원</string>
+    <string name="cast">출연진</string>
+    <string name="discount">할인정보</string>
+    <string name="enabled_coupon">사용가능한 할인쿠폰 2개</string>
+    <string name="expand">펼치기</string>
+    <string name="collapse">접기</string>
+    <string name="detail">상세정보</string>
+    <string name="cast_count">%d</string>
+    <string name="related_info">상품 관련 정보</string>
+    <string name="show_date">2022.09.16 – 2022.11.06</string>
+    <string name="show_location">유니버설아트센터 대극장</string>
+    <string name="host">주최/기획</string>
+    <string name="host_content">(주) 글로벌컨텐츠_삼총사</string>
+    <string name="counsel">소비자상담</string>
+    <string name="counsel_content">클립서비스 1577–3363 \n / 글로벌컨텐츠 02–2051–1698</string>
+    <string name="preview_rank">관람등급</string>
+    <string name="preview_rank_content">8세 이상 관람가 (미취학 아동 입장 불가)</string>
+    <string name="location">공연장소</string>
+    <string name="location_content">부산 소항씨어터 신한카드홀</string>
+    <string name="book">예매하기</string>
+
 </resources>
