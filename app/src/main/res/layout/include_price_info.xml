@@ -11,7 +11,7 @@
 
         <variable
             name="price"
-            type="String" />
+            type="int" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -48,7 +48,7 @@
             android:layout_height="18dp"
             android:layout_marginStart="14dp"
             android:gravity="center_vertical"
-            android:text="@{price}"
+            app:seat_price="@{price}"
             android:textAppearance="@style/Yes2414Medium"
             android:textColor="@color/brownish_grey"
             app:layout_constraintBottom_toBottomOf="@+id/tv_vip"

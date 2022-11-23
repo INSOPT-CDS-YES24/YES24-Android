@@ -42,16 +42,19 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        binding.deatialdto = ContentDetailDto(
+            0,
+            "",
+            ContentDetailDto.Data(1, "", "", "", "", listOf(), 0, 0, 0, 0, 0, "", "", "")
+        ) // 코루틴 대용..
         ApiFactory.yes24Service.getContentDetail(1).enqueue(
-            object : Callback<ContentDetailDto>{
+            object : Callback<ContentDetailDto> {
                 override fun onResponse(
                     call: Call<ContentDetailDto>,
                     response: Response<ContentDetailDto>
                 ) {
-                    if(response.isSuccessful){
-                        Timber.e(response.toString())
-                        Timber.e(response.body().toString())
+                    if (response.isSuccessful) {
+                        binding.deatialdto = response.body()!!
                     }
                     Timber.e(response.toString())
                 }
