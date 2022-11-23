@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="myticket"
+            type="com.subeenie.yes24_android.presentation.mypage.MyPageData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="30dp">
+
+        <ImageView
+            android:id="@+id/iv_performance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@{myticket.image}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_performance_two" />
+
+        <TextView
+            android:id="@+id/tv_genre"
+            style="@style/Yes2412Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{myticket.genre}"
+            android:textColor="@color/yes_24_main"
+            app:layout_constraintStart_toStartOf="@id/iv_performance"
+            app:layout_constraintTop_toBottomOf="@id/iv_performance"
+            tools:text="콘서트" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/Yes2414Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="none"
+            android:maxLength="10"
+            android:scrollHorizontally="false"
+            android:singleLine="false"
+            android:text="@{myticket.title}"
+            android:textColor="@color/brownish_grey"
+            app:layout_constraintStart_toStartOf="@id/tv_genre"
+            app:layout_constraintTop_toBottomOf="@+id/tv_genre"
+            tools:text="태양의서커스 <뉴 알레그리아>" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
