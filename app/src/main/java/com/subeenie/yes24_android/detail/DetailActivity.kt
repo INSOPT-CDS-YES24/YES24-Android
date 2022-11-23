@@ -46,7 +46,7 @@ class DetailActivity : AppCompatActivity() {
             0,
             "",
             ContentDetailDto.Data(1, "", "", "", "", listOf(), 0, 0, 0, 0, 0, "", "", "")
-        ) // 코루틴 대용..
+        ) // 비동기s
         ApiFactory.yes24Service.getContentDetail(1).enqueue(
             object : Callback<ContentDetailDto> {
                 override fun onResponse(

@@ -58,8 +58,7 @@ fun MaterialButton.expandButton(expand: Boolean) {
 @BindingAdapter("app:seat_price")
 fun TextView.reformatPrice(price: Int) {
     val decimal = DecimalFormat("#,###")
-
-    this.text = decimal.format(price)
+    this.text = String.format(context.getString(R.string.price), decimal.format(price))
 }
 
 @BindingAdapter("app:call_text")

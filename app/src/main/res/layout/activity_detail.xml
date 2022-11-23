@@ -52,7 +52,7 @@
                     app:layout_collapseMode="pin"
                     app:layout_constraintTop_toTopOf="parent"
                     app:navigationIcon="@drawable/ic_arrow_left_white"
-                    app:title="@string/musical"
+                    app:title="@{deatialdto.data.title}"
                     app:titleTextAppearance="@style/Yes2418Bold"
                     app:titleTextColor="@color/white"
                     tools:text="뮤지컬 [삼총사]" />
@@ -152,11 +152,12 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="11dp"
                         android:text="@{deatialdto.data.location}"
-                        tools:text="@string/show_location"
                         android:textAppearance="@style/Yes2414Medium"
                         android:textColor="@color/brownish_grey"
                         app:layout_constraintBottom_toBottomOf="@+id/iv_location"
-                        app:layout_constraintStart_toEndOf="@+id/iv_location" />
+                        app:layout_constraintStart_toEndOf="@+id/iv_location"
+                        app:layout_constraintTop_toTopOf="@+id/iv_location"
+                        tools:text="@string/show_location" />
 
                     <com.google.android.material.tabs.TabLayout
                         android:id="@+id/tl_info"
@@ -339,7 +340,7 @@
                         android:textColor="@color/brownish_grey"
                         app:drawableEndCompat="@drawable/ic_arrow_right"
                         app:layout_constraintTop_toBottomOf="@+id/tv_discount"
-                        app:spannable_text="@{@string/enabled_coupon}"
+                        app:spannable_text="@{@string/enabled_coupon(deatialdto.data.coupon)}"
                         tools:text="@string/enabled_coupon" />
 
                     <ImageView
