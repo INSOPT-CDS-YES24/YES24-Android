@@ -13,13 +13,13 @@ import java.text.DecimalFormat
 
 
 @BindingAdapter("app:load_price_rank")
-fun ImageView.loadPriceRank(foodName: String) {
-    this.setImageResource(PriceRank.valueOf(foodName).imageRes)
+fun ImageView.loadPriceRank(priceName: String) {
+    this.setImageResource(PriceRank.valueOf(priceName).imageRes)
 }
 
-@BindingAdapter("app:img_res")
-fun ImageView.loadCastPicture(resId: Int) {
-    this.setImageResource(resId)
+@BindingAdapter("app:load_actor_image")
+fun ImageView.loadActorImage(actorName: String) {
+    this.setImageResource(ActorInfo.valueOf(actorName).imageRes)
 }
 
 /**
@@ -61,6 +61,9 @@ fun TextView.reformatPrice(price: Int) {
     this.text = String.format(context.getString(R.string.price), decimal.format(price))
 }
 
+/**
+ * / 기준으로 소비자상담 텍스트 줄바꿈
+ */
 @BindingAdapter("app:call_text")
 fun TextView.reformatCall(call: String) {
     val strBuilder = StringBuilder()

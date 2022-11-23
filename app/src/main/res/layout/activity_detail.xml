@@ -130,12 +130,12 @@
                         android:layout_marginStart="11dp"
                         android:layout_marginTop="@dimen/sub_space_20"
                         android:text="@{deatialdto.data.dueDate}"
-                        tools:text="@string/show_date"
                         android:textAppearance="@style/Yes2414Medium"
                         android:textColor="@color/brownish_grey"
                         app:layout_constraintBottom_toBottomOf="@+id/iv_calender"
                         app:layout_constraintStart_toEndOf="@+id/iv_calender"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                        tools:text="@string/show_date" />
 
                     <ImageView
                         android:id="@+id/iv_location"
@@ -306,7 +306,8 @@
                         android:layout_marginTop="@dimen/sub_space_20"
                         android:orientation="horizontal"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_cast" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_cast"
+                        tools:listitem="@layout/item_cast" />
 
                     <include
                         android:id="@+id/divider2"
@@ -448,7 +449,8 @@
                         android:text="@{deatialdto.data.host}"
                         app:layout_constraintBottom_toBottomOf="@id/tv_host"
                         app:layout_constraintStart_toEndOf="@+id/tv_host"
-                        app:layout_constraintTop_toTopOf="@id/tv_host" />
+                        app:layout_constraintTop_toTopOf="@id/tv_host"
+                        tools:text="@string/host_content" />
 
                     <TextView
                         android:id="@+id/tv_counsel"
@@ -467,7 +469,8 @@
                         app:call_text="@{deatialdto.data.callCenter}"
                         app:layout_constraintBottom_toBottomOf="@id/tv_counsel"
                         app:layout_constraintStart_toEndOf="@+id/tv_counsel"
-                        app:layout_constraintTop_toTopOf="@id/tv_counsel" />
+                        app:layout_constraintTop_toTopOf="@id/tv_counsel"
+                        tools:text="@string/counsel_content" />
 
                     <TextView
                         android:id="@+id/tv_preview_rank"
@@ -486,7 +489,8 @@
                         android:text="@{deatialdto.data.ageLimit}"
                         app:layout_constraintBottom_toBottomOf="@id/tv_preview_rank"
                         app:layout_constraintStart_toEndOf="@+id/tv_preview_rank"
-                        app:layout_constraintTop_toTopOf="@id/tv_preview_rank" />
+                        app:layout_constraintTop_toTopOf="@id/tv_preview_rank"
+                        tools:text="@string/preview_rank_content" />
 
                     <TextView
                         android:id="@+id/tv_location"
@@ -505,7 +509,8 @@
                         android:text="@{deatialdto.data.location}"
                         app:layout_constraintBottom_toBottomOf="@id/tv_location"
                         app:layout_constraintStart_toEndOf="@+id/tv_location"
-                        app:layout_constraintTop_toTopOf="@id/tv_location" />
+                        app:layout_constraintTop_toTopOf="@id/tv_location"
+                        tools:text="@string/location_content" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.core.widget.NestedScrollView>

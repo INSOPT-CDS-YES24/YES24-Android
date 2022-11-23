@@ -8,10 +8,9 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.subeenie.yes24_android.BR
 import com.subeenie.yes24_android.databinding.ItemCastBinding
-import com.subeenie.yes24_android.detail.data.CastData
 
 class CastAdapter(context: Context) :
-    ListAdapter<CastData, CastAdapter.ItemCastViewHolder>(CastDiffUtil) {
+    ListAdapter<String, CastAdapter.ItemCastViewHolder>(CastDiffUtil) {
 
     private val inflater by lazy { LayoutInflater.from(context) }
 
@@ -22,16 +21,16 @@ class CastAdapter(context: Context) :
     }
 
     override fun onBindViewHolder(holder: ItemCastViewHolder, position: Int) {
-        holder.binding.setVariable(BR.cast, getItem(position))
+        holder.binding.setVariable(BR.actor, getItem(position))
     }
 
     companion object {
-        private object CastDiffUtil : DiffUtil.ItemCallback<CastData>() {
-            override fun areItemsTheSame(oldItem: CastData, newItem: CastData): Boolean {
+        private object CastDiffUtil : DiffUtil.ItemCallback<String>() {
+            override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
                 return false
             }
 
-            override fun areContentsTheSame(oldItem: CastData, newItem: CastData): Boolean {
+            override fun areContentsTheSame(oldItem: String, newItem: String): Boolean {
                 return false
             }
         }

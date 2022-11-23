@@ -15,7 +15,6 @@ import com.subeenie.yes24_android.application.ApiFactory
 import com.subeenie.yes24_android.data.ContentDetailDto
 import com.subeenie.yes24_android.databinding.ActivityDetailBinding
 import com.subeenie.yes24_android.detail.adapter.CastAdapter
-import com.subeenie.yes24_android.detail.data.CastData
 import com.subeenie.yes24_android.detail.viewmodel.DetailViewModel
 import retrofit2.Call
 import retrofit2.Callback
@@ -28,47 +27,17 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
     private val detailViewModel by viewModels<DetailViewModel>()
     private lateinit var adapter: CastAdapter
-    private val castList = listOf<CastData>(
-        //더미데이터
-        CastData("정욱진", R.drawable.img_cast1),
-        CastData("최민우", R.drawable.img_cast2),
-        CastData("렌", R.drawable.img_cast3),
-        CastData("라키", R.drawable.img_cast4),
-        CastData("경윤", R.drawable.img_cast5),
-    )
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.deatialdto = ContentDetailDto(
-            0,
-            "",
-            ContentDetailDto.Data(1, "", "", "", "", listOf(), 0, 0, 0, 0, 0, "", "", "")
-        ) // 비동기s
-        ApiFactory.yes24Service.getContentDetail(1).enqueue(
-            object : Callback<ContentDetailDto> {
-                override fun onResponse(
-                    call: Call<ContentDetailDto>,
-                    response: Response<ContentDetailDto>
-                ) {
-                    if (response.isSuccessful) {
-                        binding.deatialdto = response.body()!!
-                    }
-                    Timber.e(response.toString())
-                }
-                override fun onFailure(call: Call<ContentDetailDto>, t: Throwable) {
-                    Timber.e(t)
-                }
-            }
-
-
-        )
 
         binding.viewmodel = detailViewModel
         binding.lifecycleOwner = this
         setAdapter()
+        initServerConnection()
         addObserve()
         changeToolbar(this)
     }
@@ -82,8 +51,37 @@ class DetailActivity : AppCompatActivity() {
     private fun setAdapter() {
         adapter = CastAdapter(this)
         binding.rcvCast.adapter = adapter
-        adapter.submitList(castList)
-        detailViewModel.count = adapter.currentList.size
+    }
+
+    private fun initServerConnection() {
+        binding.deatialdto = ContentDetailDto(
+            0,
+            "",
+            ContentDetailDto.Data(1, "", "", "", "", listOf(), 0, 0, 0, 0, 0, "", "", "")
+        ) // 코루틴이나 엠티뷰가 없어서 데이터바인딩 적용전까지 null값대신 빈 데이터 적용
+        ApiFactory.yes24Service.getContentDetail(1).enqueue(
+            object : Callback<ContentDetailDto> {
+                override fun onResponse(
+                    call: Call<ContentDetailDto>,
+                    response: Response<ContentDetailDto>
+                ) {
+                    if (response.isSuccessful) {
+                        val serverData = response.body()!!
+                        binding.deatialdto = serverData
+                        val tempList = mutableListOf<String>()
+                        serverData.data.actor.forEach {
+                            tempList.add(it.replace("'", ""))
+                        } //배우데이터가 '' 에  감싸진채로 전달 한번 가공해서 어댑터에 전달
+                        adapter.submitList(tempList)
+                    }
+                    Timber.e(response.toString())
+                }
+
+                override fun onFailure(call: Call<ContentDetailDto>, t: Throwable) {
+                    Timber.e(t)
+                }
+            }
+        )
     }
 
     /**
