@@ -36,4 +36,9 @@
     <string name="location_content">부산 소항씨어터 신한카드홀</string>
     <string name="book">예매하기</string>
 
+    <!-- MainActivity -->
+    <string name="home">홈</string>
+    <string name="category">카테고리</string>
+    <string name="search">검색</string>
+    <string name="my_ticket">마이티켓</string>
 </resources>
