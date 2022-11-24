@@ -18,4 +18,5 @@
     <color name="price_purple">#FF8C56FF</color>
     <color name="price_yellow">#FFFFCE50</color>
     <color name="transparent">#00000000</color>
+    <color name="search_grey">#a7a7a7</color>
 </resources>
