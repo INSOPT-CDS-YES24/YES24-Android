@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/fragment_home"
+        android:icon="@drawable/ic_home"
+        android:iconTint="@color/light_grey"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/fragment_category"
+        android:icon="@drawable/ic_category"
+        android:iconTint="@color/light_grey"
+        android:title="@string/category" />
+    <item
+        android:id="@+id/fragment_search"
+        android:icon="@drawable/ic_search"
+        android:iconTint="@color/light_grey"
+        android:title="@string/search" />
+    <item
+        android:id="@+id/fragment_myticket"
+        android:icon="@drawable/ic_myticket"
+        android:iconTint="@color/light_grey"
+        android:title="@string/my_ticket" />
+</menu>

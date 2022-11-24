@@ -6,14 +6,14 @@
     <data>
 
         <variable
-            name="cast"
-            type="com.subeenie.yes24_android.detail.data.CastData" />
+            name="actor"
+            type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_marginEnd="@dimen/app_margin_space_16"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/app_margin_space_16">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_cast"
@@ -29,10 +29,10 @@
                 android:id="@+id/iv_cast"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:img_res="@{cast.resId}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:load_actor_image="@{actor}"
                 tools:src="@drawable/ic_launcher_background" />
         </androidx.cardview.widget.CardView>
 
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/app_margin_space_7"
             android:gravity="center"
-            android:text="@{cast.name}"
+            android:text="@{actor}"
             android:textAppearance="@style/Yes2414Medium"
             android:textColor="@color/grey"
             app:layout_constraintEnd_toEndOf="@+id/cv_cast"

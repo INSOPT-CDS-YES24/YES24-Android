@@ -6,6 +6,10 @@
     <data>
 
         <variable
+            name="deatialdto"
+            type="com.subeenie.yes24_android.data.ContentDetailDto" />
+
+        <variable
             name="viewmodel"
             type="com.subeenie.yes24_android.detail.viewmodel.DetailViewModel" />
     </data>
@@ -48,7 +52,7 @@
                     app:layout_collapseMode="pin"
                     app:layout_constraintTop_toTopOf="parent"
                     app:navigationIcon="@drawable/ic_arrow_left_white"
-                    app:title="@string/musical"
+                    app:title="@{deatialdto.data.title}"
                     app:titleTextAppearance="@style/Yes2418Bold"
                     app:titleTextColor="@color/white"
                     tools:text="뮤지컬 [삼총사]" />
@@ -80,11 +84,12 @@
                         android:layout_marginStart="@dimen/app_margin_space_16"
                         android:layout_marginTop="26dp"
                         android:gravity="center_vertical"
-                        android:text="@string/musical"
+                        android:text="@{deatialdto.data.title}"
                         android:textAppearance="@style/Yes2420Bold"
                         android:textColor="@color/brownish_grey"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="@string/musical" />
 
                     <ImageView
                         android:id="@+id/iv_share"
@@ -124,12 +129,13 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="11dp"
                         android:layout_marginTop="@dimen/sub_space_20"
-                        android:text="@string/show_date"
+                        android:text="@{deatialdto.data.dueDate}"
                         android:textAppearance="@style/Yes2414Medium"
                         android:textColor="@color/brownish_grey"
                         app:layout_constraintBottom_toBottomOf="@+id/iv_calender"
                         app:layout_constraintStart_toEndOf="@+id/iv_calender"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                        tools:text="@string/show_date" />
 
                     <ImageView
                         android:id="@+id/iv_location"
@@ -145,11 +151,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="11dp"
-                        android:text="@string/show_location"
+                        android:text="@{deatialdto.data.location}"
                         android:textAppearance="@style/Yes2414Medium"
                         android:textColor="@color/brownish_grey"
                         app:layout_constraintBottom_toBottomOf="@+id/iv_location"
-                        app:layout_constraintStart_toEndOf="@+id/iv_location" />
+                        app:layout_constraintStart_toEndOf="@+id/iv_location"
+                        app:layout_constraintTop_toTopOf="@+id/iv_location"
+                        tools:text="@string/show_location" />
 
                     <com.google.android.material.tabs.TabLayout
                         android:id="@+id/tl_info"
@@ -209,7 +217,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tv_price"
-                        app:price="@{@string/vip_price}"
+                        app:price="@{deatialdto.data.vipSeat}"
                         app:rank="@{@string/vip_seat}" />
 
                     <include
@@ -221,7 +229,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/price_vip"
-                        app:price="@{@string/r_price}"
+                        app:price="@{deatialdto.data.RSeat}"
                         app:rank="@{@string/r_seat}" />
 
                     <include
@@ -233,7 +241,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/price_r"
-                        app:price="@{@string/s_price}"
+                        app:price="@{deatialdto.data.SSeat}"
                         app:rank="@{@string/s_seat}" />
 
                     <include
@@ -245,7 +253,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/price_s"
-                        app:price="@{@string/a_price}"
+                        app:price="@{deatialdto.data.ASeat}"
                         app:rank="@{@string/a_seat}" />
 
                     <include
@@ -272,7 +280,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:text="@{@string/cast_count(viewmodel.count)}"
+                        android:text="@{@string/cast_count(deatialdto.data.actor.size())}"
                         android:textAppearance="@style/Yes2414Bold"
                         android:textColor="@color/yes_24_main"
                         app:layout_constraintBottom_toBottomOf="@+id/tv_cast"
@@ -298,7 +306,8 @@
                         android:layout_marginTop="@dimen/sub_space_20"
                         android:orientation="horizontal"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_cast" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_cast"
+                        tools:listitem="@layout/item_cast" />
 
                     <include
                         android:id="@+id/divider2"
@@ -332,7 +341,7 @@
                         android:textColor="@color/brownish_grey"
                         app:drawableEndCompat="@drawable/ic_arrow_right"
                         app:layout_constraintTop_toBottomOf="@+id/tv_discount"
-                        app:spannable_text="@{@string/enabled_coupon}"
+                        app:spannable_text="@{@string/enabled_coupon(deatialdto.data.coupon)}"
                         tools:text="@string/enabled_coupon" />
 
                     <ImageView
@@ -437,10 +446,11 @@
                         style="@style/Detail_Related_Content"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/host_content"
+                        android:text="@{deatialdto.data.host}"
                         app:layout_constraintBottom_toBottomOf="@id/tv_host"
                         app:layout_constraintStart_toEndOf="@+id/tv_host"
-                        app:layout_constraintTop_toTopOf="@id/tv_host" />
+                        app:layout_constraintTop_toTopOf="@id/tv_host"
+                        tools:text="@string/host_content" />
 
                     <TextView
                         android:id="@+id/tv_counsel"
@@ -456,10 +466,11 @@
                         style="@style/Detail_Related_Content"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/counsel_content"
+                        app:call_text="@{deatialdto.data.callCenter}"
                         app:layout_constraintBottom_toBottomOf="@id/tv_counsel"
                         app:layout_constraintStart_toEndOf="@+id/tv_counsel"
-                        app:layout_constraintTop_toTopOf="@id/tv_counsel" />
+                        app:layout_constraintTop_toTopOf="@id/tv_counsel"
+                        tools:text="@string/counsel_content" />
 
                     <TextView
                         android:id="@+id/tv_preview_rank"
@@ -475,10 +486,11 @@
                         style="@style/Detail_Related_Content"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/preview_rank_content"
+                        android:text="@{deatialdto.data.ageLimit}"
                         app:layout_constraintBottom_toBottomOf="@id/tv_preview_rank"
                         app:layout_constraintStart_toEndOf="@+id/tv_preview_rank"
-                        app:layout_constraintTop_toTopOf="@id/tv_preview_rank" />
+                        app:layout_constraintTop_toTopOf="@id/tv_preview_rank"
+                        tools:text="@string/preview_rank_content" />
 
                     <TextView
                         android:id="@+id/tv_location"
@@ -494,10 +506,11 @@
                         style="@style/Detail_Related_Content"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/location_content"
+                        android:text="@{deatialdto.data.location}"
                         app:layout_constraintBottom_toBottomOf="@id/tv_location"
                         app:layout_constraintStart_toEndOf="@+id/tv_location"
-                        app:layout_constraintTop_toTopOf="@id/tv_location" />
+                        app:layout_constraintTop_toTopOf="@id/tv_location"
+                        tools:text="@string/location_content" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.core.widget.NestedScrollView>
