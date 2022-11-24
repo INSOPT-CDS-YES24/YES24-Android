@@ -1,7 +1,6 @@
 package com.subeenie.yes24_android.detail.util
 
 import android.annotation.SuppressLint
-import android.graphics.Color
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
@@ -10,16 +9,17 @@ import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.google.android.material.button.MaterialButton
 import com.subeenie.yes24_android.R
+import java.text.DecimalFormat
 
 
 @BindingAdapter("app:load_price_rank")
-fun ImageView.loadPriceRank(foodName: String) {
-    this.setImageResource(PriceRank.valueOf(foodName).imageRes)
+fun ImageView.loadPriceRank(priceName: String) {
+    this.setImageResource(PriceRank.valueOf(priceName).imageRes)
 }
 
-@BindingAdapter("app:img_res")
-fun ImageView.loadCastPicture(resId: Int) {
-    this.setImageResource(resId)
+@BindingAdapter("app:load_actor_image")
+fun ImageView.loadActorImage(actorName: String) {
+    this.setImageResource(ActorInfo.valueOf(actorName).imageRes)
 }
 
 /**
@@ -50,4 +50,28 @@ fun MaterialButton.expandButton(expand: Boolean) {
         this.text = context.getString(R.string.expand)
         this.icon = context.getDrawable(R.drawable.ic_expand)
     }
+}
+
+/**
+ * 천단위 콤마
+ */
+@BindingAdapter("app:seat_price")
+fun TextView.reformatPrice(price: Int) {
+    val decimal = DecimalFormat("#,###")
+    this.text = String.format(context.getString(R.string.price), decimal.format(price))
+}
+
+/**
+ * / 기준으로 소비자상담 텍스트 줄바꿈
+ */
+@BindingAdapter("app:call_text")
+fun TextView.reformatCall(call: String) {
+    val strBuilder = StringBuilder()
+    strBuilder.append(call)
+    call.forEachIndexed { index, c ->
+        if(c == '/'){
+            strBuilder.insert(index-1, "\n")
+        }
+    }
+    this.text = strBuilder.toString()
 }

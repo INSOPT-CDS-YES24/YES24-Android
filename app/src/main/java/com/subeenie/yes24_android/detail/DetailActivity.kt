@@ -11,10 +11,15 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener
 import com.subeenie.yes24_android.R
+import com.subeenie.yes24_android.application.ApiFactory
+import com.subeenie.yes24_android.data.ContentDetailDto
 import com.subeenie.yes24_android.databinding.ActivityDetailBinding
 import com.subeenie.yes24_android.detail.adapter.CastAdapter
-import com.subeenie.yes24_android.detail.data.CastData
 import com.subeenie.yes24_android.detail.viewmodel.DetailViewModel
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import timber.log.Timber
 
 
 class DetailActivity : AppCompatActivity() {
@@ -22,14 +27,6 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
     private val detailViewModel by viewModels<DetailViewModel>()
     private lateinit var adapter: CastAdapter
-    private val castList = listOf<CastData>(
-        //더미데이터
-        CastData("정욱진", R.drawable.img_cast1),
-        CastData("최민우", R.drawable.img_cast2),
-        CastData("렌", R.drawable.img_cast3),
-        CastData("라키", R.drawable.img_cast4),
-        CastData("경윤", R.drawable.img_cast5),
-    )
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +37,7 @@ class DetailActivity : AppCompatActivity() {
         binding.viewmodel = detailViewModel
         binding.lifecycleOwner = this
         setAdapter()
+        initServerConnection()
         addObserve()
         changeToolbar(this)
     }
@@ -53,8 +51,37 @@ class DetailActivity : AppCompatActivity() {
     private fun setAdapter() {
         adapter = CastAdapter(this)
         binding.rcvCast.adapter = adapter
-        adapter.submitList(castList)
-        detailViewModel.count = adapter.currentList.size
+    }
+
+    private fun initServerConnection() {
+        binding.deatialdto = ContentDetailDto(
+            0,
+            "",
+            ContentDetailDto.Data(1, "", "", "", "", listOf(), 0, 0, 0, 0, 0, "", "", "")
+        ) // 코루틴이나 엠티뷰가 없어서 데이터바인딩 적용전까지 null값대신 빈 데이터 적용
+        ApiFactory.yes24Service.getContentDetail(1).enqueue(
+            object : Callback<ContentDetailDto> {
+                override fun onResponse(
+                    call: Call<ContentDetailDto>,
+                    response: Response<ContentDetailDto>
+                ) {
+                    if (response.isSuccessful) {
+                        val serverData = response.body()!!
+                        binding.deatialdto = serverData
+                        val tempList = mutableListOf<String>()
+                        serverData.data.actor.forEach {
+                            tempList.add(it.replace("'", ""))
+                        } //배우데이터가 '' 에  감싸진채로 전달 한번 가공해서 어댑터에 전달
+                        adapter.submitList(tempList)
+                    }
+                    Timber.e(response.toString())
+                }
+
+                override fun onFailure(call: Call<ContentDetailDto>, t: Throwable) {
+                    Timber.e(t)
+                }
+            }
+        )
     }
 
     /**

@@ -5,8 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class DetailViewModel : ViewModel(){
-    var count = 0
-
     private val _posterExpand = MutableLiveData<Boolean>(false)
     val posterExpand :LiveData<Boolean> get() = _posterExpand
 
