@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.subeenie.yes24_android.databinding.ActivityMainBinding
 import com.subeenie.yes24_android.presentation.home.HomeFragment
+import com.subeenie.yes24_android.presentation.mypage.MyticketFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -13,5 +14,4 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
-
 }

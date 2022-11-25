@@ -12,8 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <item name="android:includeFontPadding">false</item>
-        <!-- Customize your theme here. -->
-        <item name="android:includeFontPadding">false</item>
+
     </style>
     <!--font-->
     <style name="Yes2422Bold">

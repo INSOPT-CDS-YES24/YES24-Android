@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="myticket"
+            type="com.subeenie.yes24_android.data.MyTicketDto.Data" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -84,7 +86,7 @@
                         style="@style/Yes2414Medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
+                        android:layout_marginStart="40dp"
                         android:layout_marginTop="30dp"
                         android:text="YES포인트"
                         android:textAlignment="center"
@@ -99,7 +101,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="3,127원"
+                        android:text="@{@string/my_price(myticket.yesPoint)}"
+                        tools:text="3,127"
                         android:textColor="@color/brownish_grey"
                         app:layout_constraintEnd_toEndOf="@id/tv_point"
                         app:layout_constraintStart_toStartOf="@id/tv_point"
@@ -135,7 +138,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="0매"
+                        android:text="@{@string/my_price(myticket.saleCoupon)}"
                         android:textColor="@color/brownish_grey"
                         app:layout_constraintEnd_toEndOf="@id/tv_coupon"
                         app:layout_constraintStart_toStartOf="@id/tv_coupon"
@@ -169,7 +172,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="0매"
+                        android:text="@{@string/my_price(myticket.booking)}"
                         android:textColor="@color/brownish_grey"
                         app:layout_constraintEnd_toEndOf="@id/tv_ticket"
                         app:layout_constraintStart_toStartOf="@id/tv_ticket"
@@ -212,7 +215,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/ic_myticket_ex"
+                    android:src="@drawable/img"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_history" />
