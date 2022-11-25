@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.subeenie.yes24_android.databinding.ItemHomeSimilarRvBinding
 
 class HomeSimilarRvApater(context: Context) :
@@ -32,8 +33,12 @@ class HomeSimilarRvApater(context: Context) :
     class HomeViewHolder(private val binding: ItemHomeSimilarRvBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: HomeSimilarRvData) {
-            binding.tvHomeSimilarMusicalName.text = data.title
-            binding.tvHomeSimilarMusicalDate.text = data.date
+            with(binding){
+                ivHomeSimilarRv.load(data.poster)
+                tvHomeSimilarMusical.text = data.genre
+                tvHomeSimilarMusicalName.text = data.title
+                tvHomeSimilarMusicalDate.text = data.date
+            }
         }
     }
 }

@@ -3,10 +3,12 @@ package com.subeenie.yes24_android.application
 import com.subeenie.yes24_android.data.ContentDetailDto
 import com.subeenie.yes24_android.data.MyTicketDto
 import com.subeenie.yes24_android.data.LikeContentsDto
+import com.subeenie.yes24_android.data.HomeContentsDTO
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface Yes24Service {
 
@@ -21,4 +23,7 @@ interface Yes24Service {
 
     @GET("/api/contents/like/1")
     fun getLikeInfo(): Call<LikeContentsDto>
+
+    @GET("/api/contents/1?genre=뮤지컬")
+    fun getContentsInfo(): Call<HomeContentsDTO>
 }
