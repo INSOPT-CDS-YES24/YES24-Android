@@ -60,23 +60,14 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_home_recommend_user" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cl_home_recommend_vp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_home_recommend_question">
 
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/vp_home_recommend"
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
+                    android:layout_height="310dp"
                     android:orientation="horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    app:layout_constraintTop_toBottomOf="@id/tv_home_recommend_question" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_home_category_concert"
@@ -85,12 +76,13 @@
                 android:background="@drawable/btn_home_child"
                 android:drawableTop="@drawable/ic_home_concert"
                 android:insetTop="0dp"
+                android:layout_marginTop="10dp"
                 android:insetBottom="0dp"
                 android:minHeight="0dp"
                 android:text="콘서트"
                 android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cl_home_recommend_vp" />
+                app:layout_constraintTop_toBottomOf="@+id/vp_home_recommend" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_home_category_musical"
@@ -100,11 +92,12 @@
                 android:drawableTop="@drawable/ic_home_musical"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
+                android:layout_marginTop="10dp"
                 android:minHeight="0dp"
                 android:text="콘서트"
                 android:textSize="12sp"
                 app:layout_constraintStart_toEndOf="@+id/btn_home_category_concert"
-                app:layout_constraintTop_toBottomOf="@+id/cl_home_recommend_vp" />
+                app:layout_constraintTop_toBottomOf="@+id/vp_home_recommend" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_home_category_theater"
@@ -115,11 +108,12 @@
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:minHeight="0dp"
+                android:layout_marginTop="10dp"
                 android:text="연극"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/btn_home_category_musical"
-                app:layout_constraintTop_toBottomOf="@+id/cl_home_recommend_vp" />
+                app:layout_constraintTop_toBottomOf="@+id/vp_home_recommend" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_home_category_classic"
