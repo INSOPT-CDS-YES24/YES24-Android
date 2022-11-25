@@ -1,4 +1,4 @@
-package com.subeenie.yes24_android.kanghee
+package com.subeenie.yes24_android.presentation.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.subeenie.yes24_android.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {

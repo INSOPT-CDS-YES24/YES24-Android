@@ -1,4 +1,4 @@
-package com.subeenie.yes24_android.detail.viewmodel
+package com.subeenie.yes24_android.presentation.detail.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

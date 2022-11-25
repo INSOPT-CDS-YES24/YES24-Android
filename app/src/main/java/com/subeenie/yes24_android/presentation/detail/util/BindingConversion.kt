@@ -1,4 +1,4 @@
-package com.subeenie.yes24_android.detail.util
+package com.subeenie.yes24_android.presentation.detail.util
 
 import android.annotation.SuppressLint
 import android.text.SpannableString

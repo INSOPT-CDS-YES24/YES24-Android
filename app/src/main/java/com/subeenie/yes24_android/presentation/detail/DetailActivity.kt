@@ -1,4 +1,4 @@
-package com.subeenie.yes24_android.detail
+package com.subeenie.yes24_android.presentation.detail
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -14,8 +14,8 @@ import com.subeenie.yes24_android.R
 import com.subeenie.yes24_android.application.ApiFactory
 import com.subeenie.yes24_android.data.ContentDetailDto
 import com.subeenie.yes24_android.databinding.ActivityDetailBinding
-import com.subeenie.yes24_android.detail.adapter.CastAdapter
-import com.subeenie.yes24_android.detail.viewmodel.DetailViewModel
+import com.subeenie.yes24_android.presentation.detail.adapter.CastAdapter
+import com.subeenie.yes24_android.presentation.detail.viewmodel.DetailViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

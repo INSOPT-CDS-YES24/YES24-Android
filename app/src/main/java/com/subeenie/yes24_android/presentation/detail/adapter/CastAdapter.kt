@@ -1,4 +1,4 @@
-package com.subeenie.yes24_android.detail.adapter
+package com.subeenie.yes24_android.presentation.detail.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
