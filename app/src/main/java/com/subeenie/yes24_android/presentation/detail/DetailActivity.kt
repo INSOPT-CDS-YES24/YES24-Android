@@ -37,6 +37,7 @@ class DetailActivity : AppCompatActivity() {
         binding.viewmodel = detailViewModel
         binding.lifecycleOwner = this
         setAdapter()
+        setListener()
         initServerConnection()
         addObserve()
         changeToolbar(this)
@@ -44,7 +45,7 @@ class DetailActivity : AppCompatActivity() {
 
     private fun setListener() {
         binding.appbarPin.setNavigationOnClickListener {
-            //finish()
+            finish()
         }
     }
 
