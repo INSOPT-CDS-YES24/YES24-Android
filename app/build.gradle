@@ -15,7 +15,7 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
-
+        renderscriptSupportModeEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -83,5 +83,6 @@ dependencies {
     //kotlinx-serialization
     implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1'
 
-
+    //blurview
+    implementation 'com.qiushui:blurredview:0.8.1'
 }
