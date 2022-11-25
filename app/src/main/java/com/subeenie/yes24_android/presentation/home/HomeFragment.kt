@@ -110,8 +110,7 @@ class HomeFragment : Fragment() {
         similarRvApater.setRvList(mocList)
         viewPagerAdapter.setVpList(mocListVp)
 
-        binding.btnHomeCategoryClassic.setOnClickListener {
-            // 바텀네비게이션 테스트, 버그 테스트겸 하나 넣었음 나중에 삭제해도 상관없음!!
+        binding.btnHomeCategoryMusical.setOnClickListener {
             startActivity(Intent(requireContext(), DetailActivity::class.java))
         }
 
@@ -137,9 +136,5 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    fun initAdpater(){
-
     }
 }
