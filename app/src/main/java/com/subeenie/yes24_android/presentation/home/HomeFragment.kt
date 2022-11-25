@@ -1,5 +1,6 @@
 package com.subeenie.yes24_android.presentation.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.subeenie.yes24_android.databinding.FragmentHomeBinding
+import com.subeenie.yes24_android.presentation.detail.DetailActivity
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -62,6 +64,11 @@ class HomeFragment : Fragment() {
         similarRvApater.setRvList(mocList)
         preferRvAdapter.setRvList(mocList2)
         viewPagerAdapter.setVpList(mocListVp)
+
+        binding.btnHomeCategoryClassic.setOnClickListener {
+            // 바텀네비게이션 테스트, 버그 테스트겸 하나 넣었음 나중에 삭제해도 상관없음!!
+            startActivity(Intent(requireContext(), DetailActivity::class.java))
+        }
 
     }
 

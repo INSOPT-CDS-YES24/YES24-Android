@@ -69,8 +69,8 @@ fun TextView.reformatCall(call: String) {
     val strBuilder = StringBuilder()
     strBuilder.append(call)
     call.forEachIndexed { index, c ->
-        if(c == '/'){
-            strBuilder.insert(index-1, "\n")
+        if (c == '/') {
+            strBuilder.insert(index - 1, "\n")
         }
     }
     this.text = strBuilder.toString()
