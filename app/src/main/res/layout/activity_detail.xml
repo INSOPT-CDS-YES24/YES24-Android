@@ -11,7 +11,7 @@
 
         <variable
             name="viewmodel"
-            type="com.subeenie.yes24_android.detail.viewmodel.DetailViewModel" />
+            type="com.subeenie.yes24_android.presentation.detail.viewmodel.DetailViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
