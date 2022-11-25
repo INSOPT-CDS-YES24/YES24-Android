@@ -12,6 +12,7 @@
     <color name="brownish_grey">#606060</color>
     <color name="light_grey">#c8c8c8</color>
     <color name="very_light_grey">#f5f5f5</color>
+    <color name="date_grey">#A7A7A7</color>
     <color name="grey">#FF919191</color>
     <color name="bright_grey">#c5c5c5</color>
     <color name="price_red">#FFFF567F</color>
