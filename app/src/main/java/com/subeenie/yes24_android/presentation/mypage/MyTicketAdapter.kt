@@ -5,9 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.subeenie.yes24_android.data.LikeContentsDto
+import com.subeenie.yes24_android.data.MyTicketDto
 import com.subeenie.yes24_android.databinding.ItemMyPerformanceListBinding
 
-class MyTicketAdapter : ListAdapter<MyPageData, MyTicketAdapter.TicketViewHolder>(
+class MyTicketAdapter : ListAdapter<LikeContentsDto.Data, MyTicketAdapter.TicketViewHolder>(
     DIFFUTIL
 ) {
 
@@ -25,23 +27,23 @@ class MyTicketAdapter : ListAdapter<MyPageData, MyTicketAdapter.TicketViewHolder
     class TicketViewHolder(
         private val binding: ItemMyPerformanceListBinding
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun onBind(myPageData: MyPageData) {
-            binding.myticket = myPageData
+        fun onBind(likeContentsDto: LikeContentsDto.Data) {
+            binding.like = likeContentsDto
         }
     }
 
     companion object {
-        val DIFFUTIL = object : DiffUtil.ItemCallback<MyPageData>() {
+        val DIFFUTIL = object : DiffUtil.ItemCallback<LikeContentsDto.Data>() {
             override fun areItemsTheSame(
-                oldItem: MyPageData,
-                newItem: MyPageData
+                oldItem: LikeContentsDto.Data,
+                newItem: LikeContentsDto.Data
             ): Boolean {
-                return oldItem.image == newItem.image
+                return oldItem.genre == newItem.genre
             }
 
             override fun areContentsTheSame(
-                oldItem: MyPageData,
-                newItem: MyPageData
+                oldItem: LikeContentsDto.Data,
+                newItem: LikeContentsDto.Data
             ): Boolean {
                 return oldItem == newItem
             }
