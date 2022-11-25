@@ -1,6 +1,8 @@
 package com.subeenie.yes24_android.application
 
 import com.subeenie.yes24_android.data.ContentDetailDto
+import com.subeenie.yes24_android.data.MyTicketDto
+import com.subeenie.yes24_android.data.LikeContentsDto
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Headers
@@ -14,4 +16,9 @@ interface Yes24Service {
     fun getContentDetail(@Path("pathVariable") path: Int): Call<ContentDetailDto>
 
     //TODO DTO생성하고 나머지 API 추가
+    @GET("/api/ticket/1")
+    fun getMyTicketInfo(): Call<MyTicketDto>
+
+    @GET("/api/contents/like/1")
+    fun getLikeInfo(): Call<LikeContentsDto>
 }
